@@ -19,6 +19,8 @@ La configuración compartida debe cargarse después de los plugins de Zsh y de S
 - Zsh usa edición estilo Emacs para que la línea siempre pueda modificarse sin quedar atrapada en modo vi.
 - Las sugerencias de Zsh se aceptan con `Ctrl-e`; `Ctrl-w` acepta y ejecuta la sugerencia completa.
 
+El flujo de trabajo y los comandos de publicación están documentados en [docs/TRUNK_BASED.md](docs/TRUNK_BASED.md).
+
 ## Alias Git
 
 `g` es un alias directo de `git`, por lo que siguen funcionando comandos completos como `g status` o `g worktree`. También están disponibles `gs`, `ga`, `gaa`, `gc`, `gcm`, `gd`, `gds`, `gl`, `gb`, `gsw`, `gsc`, `gf`, `gp`, `gpl`, `gr`, `grs` y `grv`.
