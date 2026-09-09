@@ -8,7 +8,7 @@ term = xterm-ghostty
 env = TERM_PROGRAM=ghostty
 env = COLORTERM=truecolor
 
-theme = Catppuccin Mocha
+theme = Craftzdog Neon Night
 minimum-contrast = 1.15
 
 # Typography
@@ -19,6 +19,13 @@ mouse-hide-while-typing = true
 
 # Window
 window-decoration = none
+window-padding-x = 14
+window-padding-y = 12
+window-padding-balance = true
+
+# Keep enough scrollback for long builds and logs. tmux also has a large
+# history limit when it is running.
+scrollback-limit = 1000000
 
 # Transparency / blur
 background-opacity = 0.92
@@ -27,7 +34,6 @@ background-blur = 20
 # macOS keyboard
 macos-option-as-alt = true
 macos-titlebar-style = transparent
-mouse-hide-while-typing = true
 copy-on-select = clipboard
 
 # Cursor

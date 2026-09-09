@@ -1,0 +1,32 @@
+# Machine-local state and operating-system files
+.DS_Store
+*.log
+*.swp
+
+# Credentials and account/session data — never publish these.
+gh/hosts.yml
+github-copilot/
+cagent/
+
+# Shell history and generated shell state
+fish/fish_variables
+fish/config-local.fish
+nushell/history.txt
+nushell/.cache/
+
+# Local tool state
+configstore/
+homebrew/
+
+# Backup copies of configurations
+nvim.bak*/
+
+# Secrets commonly created by local tools
+.env
+.env.*
+!.env.example
+**/auth.db
+**/auth.db-*
+**/credentials*
+**/*secret*
+**/*token*

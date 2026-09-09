@@ -22,7 +22,9 @@ function _craftzdog_apply_theme --argument-names mode --description "Apply Craft
             set -g fish_color_comment 687083 --italics
             set -g fish_color_operator 8a3ffc
             set -g fish_color_escape 008fa3
-            set -g fish_color_autosuggestion 5c6f8f --italics
+            # Suggestions use a cool violet-gray so they are distinct from
+            # typed commands without competing with the prompt.
+            set -g fish_color_autosuggestion 6b728f --italics
             set -g fish_color_valid_path 00a870 --underline
             set -g fish_color_selection 11131a --background=d8e9ff
             set -g fish_color_search_match 11131a --background=ffe66d
@@ -62,7 +64,9 @@ function _craftzdog_apply_theme --argument-names mode --description "Apply Craft
             set -g fish_color_comment 64748b --italics
             set -g fish_color_operator c77dff
             set -g fish_color_escape 5df6ff
-            set -g fish_color_autosuggestion 8da2b8 --italics
+            # Suggestions use a muted indigo instead of the same gray family
+            # as normal text, making generated input easy to recognize.
+            set -g fish_color_autosuggestion a5b4fc --italics
             set -g fish_color_valid_path 37f499 --underline
             set -g fish_color_selection f8fbff --background=263a5f
             set -g fish_color_search_match 0b1020 --background=ffe66d

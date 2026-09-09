@@ -9,8 +9,9 @@ add_newline = true
 
 # Main prompt format
 format = """
-[╭─](bold blue)$os$username$hostname$directory$git_branch$git_status$git_state$git_metrics$fill$package$nodejs$python$rust$golang$java$dotnet$docker_context$kubernetes$cmd_duration$jobs$time
-[╰─](bold blue)$character"""
+[╭─](bold blue) $os$username$hostname$directory$git_branch$git_status$git_state$git_metrics
+[│](bold blue) $fill$package$nodejs$python$rust$golang$java$dotnet$docker_context$kubernetes$cmd_duration$jobs$time
+[╰─](bold blue) $character"""
 
 # Right prompt format
 right_format = """$status"""
@@ -18,7 +19,7 @@ right_format = """$status"""
 # Fill character between left and right
 [fill]
 symbol = '─'
-style = 'bold black'
+style = 'bold #334155'
 
 # Operating System
 [os]
@@ -63,12 +64,12 @@ read_only = ' 🔒'
 [git_branch]
 symbol = '🌱 '
 format = 'on [$symbol$branch(:$remote_branch)]($style) '
-style = 'bold green'
+style = 'bold #a6e3a1'
 
 # Git Status
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
-style = 'bold red'
+style = 'bold #f38ba8'
 conflicted = '🏳 ${count}'
 ahead = '⬆️ ${count}'
 behind = '⬇️ ${count}'
