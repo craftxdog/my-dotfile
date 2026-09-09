@@ -1,0 +1,26 @@
+# Craftzdog Neon Night
+background = #0b1020
+foreground = #e6edf3
+
+cursor-color = #00ff9c
+cursor-text = #0b1020
+
+selection-background = #263a5f
+selection-foreground = #f8fbff
+
+palette = 0=#111827
+palette = 1=#ff5d73
+palette = 2=#37f499
+palette = 3=#f7c843
+palette = 4=#4da3ff
+palette = 5=#c77dff
+palette = 6=#00e5ff
+palette = 7=#e6edf3
+palette = 8=#64748b
+palette = 9=#ff7a90
+palette = 10=#78ffad
+palette = 11=#ffe66d
+palette = 12=#7bb7ff
+palette = 13=#e49bff
+palette = 14=#5df6ff
+palette = 15=#ffffff

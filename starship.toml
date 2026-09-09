@@ -1,0 +1,237 @@
+# Starship Configuration
+# ======================
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Main prompt format
+format = """
+[╭─](bold blue)$os$username$hostname$directory$git_branch$git_status$git_state$git_metrics$fill$package$nodejs$python$rust$golang$java$dotnet$docker_context$kubernetes$cmd_duration$jobs$time
+[╰─](bold blue)$character"""
+
+# Right prompt format
+right_format = """$status"""
+
+# Fill character between left and right
+[fill]
+symbol = '─'
+style = 'bold black'
+
+# Operating System
+[os]
+disabled = false
+style = 'bold white'
+
+[os.symbols]
+Macos = '🍎 '
+Ubuntu = '🐧 '
+Windows = '🪟 '
+
+# Username
+[username]
+show_always = false
+style_user = 'bold yellow'
+style_root = 'bold red'
+format = '[$user]($style) '
+
+# Hostname
+[hostname]
+ssh_only = true
+format = 'on [$hostname](bold purple) '
+
+# Directory
+[directory]
+style = 'bold cyan'
+format = '[$path]($style)[$read_only]($read_only_style) '
+truncation_length = 3
+truncation_symbol = '…/'
+read_only = ' 🔒'
+
+[directory.substitutions]
+'Documents' = '📄 '
+'Downloads' = '📥 '
+'Music' = '🎵 '
+'Pictures' = '🖼️ '
+'Videos' = '🎬 '
+'Projects' = '💼 '
+'Desktop' = '🖥️ '
+
+# Git Branch
+[git_branch]
+symbol = '🌱 '
+format = 'on [$symbol$branch(:$remote_branch)]($style) '
+style = 'bold green'
+
+# Git Status
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = 'bold red'
+conflicted = '🏳 ${count}'
+ahead = '⬆️ ${count}'
+behind = '⬇️ ${count}'
+diverged = '⬆️ ${ahead_count}⬇️ ${behind_count}'
+up_to_date = '✅'
+untracked = '🤷 ${count}'
+stashed = '📦 ${count}'
+modified = '📝 ${count}'
+staged = '➕ ${count}'
+renamed = '👅 ${count}'
+deleted = '🗑️ ${count}'
+
+# Git State
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+style = 'bold yellow'
+
+# Git Metrics
+[git_metrics]
+disabled = false
+added_style = 'bold green'
+deleted_style = 'bold red'
+only_nonzero_diffs = true
+format = '([+$added]($added_style) )([-$deleted]($deleted_style) )'
+
+# Package Version
+[package]
+symbol = '📦 '
+format = '[$symbol$version]($style) '
+style = 'bold magenta'
+
+# Node.js
+[nodejs]
+symbol = '⬢ '
+format = '[$symbol($version )]($style)'
+style = 'bold green'
+
+# Python
+[python]
+symbol = '🐍 '
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = 'bold yellow'
+
+# Rust
+[rust]
+symbol = '🦀 '
+format = '[$symbol($version )]($style)'
+style = 'bold red'
+
+# Go
+[golang]
+symbol = '🐹 '
+format = '[$symbol($version )]($style)'
+style = 'bold cyan'
+
+# Java
+[java]
+symbol = '☕ '
+format = '[$symbol($version )]($style)'
+style = 'bold red'
+
+# .NET
+[dotnet]
+symbol = '🔷 '
+format = '[$symbol($version )]($style)'
+style = 'bold blue'
+
+# Docker Context
+[docker_context]
+symbol = '🐳 '
+format = '[$symbol$context]($style) '
+style = 'bold blue'
+
+# Kubernetes
+[kubernetes]
+format = '[$symbol$context( \($namespace\))]($style) '
+style = 'bold cyan'
+symbol = '⛵ '
+
+[kubernetes.context_aliases]
+'dev.local.cluster.k8s' = 'dev'
+
+# Command Duration
+[cmd_duration]
+min_time = 2000
+format = 'took [$duration](bold yellow) '
+show_milliseconds = false
+show_notifications = false
+
+# Jobs
+[jobs]
+symbol = '⚡ '
+style = 'bold blue'
+number_threshold = 1
+symbol_threshold = 1
+format = '[$symbol$number]($style) '
+
+# Time
+[time]
+disabled = false
+format = '🕐[$time]($style) '
+style = 'bold white'
+time_format = '%T'
+
+# Character (prompt symbol)
+[character]
+success_symbol = '[➜](bold green) '
+error_symbol = '[➜](bold red) '
+vimcmd_symbol = '[←](bold green) '
+
+# Status
+[status]
+disabled = false
+format = '[$symbol$status]($style) '
+symbol = '🚫 '
+success_symbol = '✅ '
+not_executable_symbol = '🔐 '
+not_found_symbol = '🔍 '
+sigint_symbol = '🧱 '
+signal_symbol = '⚡ '
+style = 'bold red'
+
+# Memory Usage
+[memory_usage]
+disabled = false
+threshold = 70
+symbol = '🐏 '
+format = '$symbol[$ram( | $swap)]($style) '
+style = 'bold dimmed white'
+
+# Battery
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '💀 '
+
+[[battery.display]]
+threshold = 10
+style = 'bold red'
+
+[[battery.display]]
+threshold = 30
+style = 'bold yellow'
+
+# Custom modules
+[custom.docker_compose]
+description = 'Shows docker-compose status'
+command = '''
+if test -f docker-compose.yml -o -f docker-compose.yaml -o -f compose.yml -o -f compose.yaml
+    echo "🐳"
+end
+'''
+when = 'test -f docker-compose.yml -o -f docker-compose.yaml -o -f compose.yml -o -f compose.yaml'
+format = '[$output]($style) '
+style = 'bold blue'
+
+[custom.firebase]
+description = 'Shows Firebase project if in Firebase project'
+command = '''
+if test -f firebase.json
+    echo "🔥"
+end
+'''
+when = 'test -f firebase.json'
+format = '[$output]($style) '
+style = 'bold yellow'

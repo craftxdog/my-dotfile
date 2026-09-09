@@ -1,0 +1,53 @@
+customCommands:
+  - key: "C"
+    command: "git cz"
+    description: "commit with commitizen"
+    context: "files"
+    loadingText: "opening commitizen commit tool"
+    output: terminal
+  - key: "F"
+    command: "git fetch --all --prune"
+    description: "fetch all remotes and prune deleted branches"
+    context: "global"
+    loadingText: "fetching and pruning"
+  - key: "P"
+    command: "git push --set-upstream origin {{.CheckedOutBranch.Name}}"
+    description: "push current branch and set upstream"
+    context: "localBranches"
+    loadingText: "pushing branch"
+  - key: "O"
+    command: "gh pr view --web"
+    description: "open current pull request in browser"
+    context: "global"
+    loadingText: "opening pull request"
+    output: terminal
+  - key: "N"
+    command: "gh pr create --fill --web"
+    description: "create pull request with GitHub CLI"
+    context: "global"
+    loadingText: "creating pull request"
+    output: terminal
+gui:
+  mouseEvents: false
+  nerdFontsVersion: "3"
+  showIcons: true
+  showFileTree: true
+  showRandomTip: false
+  showCommandLog: true
+  showBottomLine: true
+  commitLength:
+    show: true
+  branchColors:
+    "main": "#859900"
+    "master": "#859900"
+    "develop": "#268bd2"
+git:
+  autoFetch: true
+  autoRefresh: true
+  parseEmoji: true
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never
+os:
+  editPreset: nvim-remote
+confirmOnQuit: true

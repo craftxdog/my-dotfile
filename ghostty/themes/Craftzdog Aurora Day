@@ -1,0 +1,26 @@
+# Craftzdog Aurora Day
+background = #fbf7ef
+foreground = #202436
+
+cursor-color = #006dff
+cursor-text = #fbf7ef
+
+selection-background = #d8e9ff
+selection-foreground = #11131a
+
+palette = 0=#202436
+palette = 1=#d91e5b
+palette = 2=#008f5f
+palette = 3=#b77900
+palette = 4=#006dff
+palette = 5=#8a3ffc
+palette = 6=#008fa3
+palette = 7=#f2eadc
+palette = 8=#687083
+palette = 9=#f43f75
+palette = 10=#00a870
+palette = 11=#d89216
+palette = 12=#2f86ff
+palette = 13=#a855f7
+palette = 14=#00a7bd
+palette = 15=#fffdf8
