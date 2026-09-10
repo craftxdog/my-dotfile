@@ -2,20 +2,25 @@
 # Source this file from ~/.zshrc after plugins and prompt initialization.
 
 if [[ -o interactive ]]; then
-  # Use one predictable editing mode. This avoids accidentally leaving the
-  # command line in vi command mode after pressing Escape or jj.
-  bindkey -e
+  # Use Zsh's vi keymaps. In Zsh this is called `vicmd` (normal mode); the
+  # actual visual selection of terminal output belongs to tmux copy-mode.
+  bindkey -v
+  typeset -g KEYTIMEOUT=20
 
-  # History navigation without changing the editing mode.
-  bindkey '^K' up-line-or-search
-  bindkey '^J' down-line-or-search
+  # Insert mode -> normal mode with Escape or jj.
+  bindkey -M viins '^[' vi-cmd-mode
+  bindkey -M viins 'jj' vi-cmd-mode
+
+  # History navigation while staying in insert mode.
+  bindkey -M viins '^K' up-line-or-search
+  bindkey -M viins '^J' down-line-or-search
 
   # Autosuggestions: make generated text clearly different from typed text.
   if (( ${+widgets[autosuggest-accept]} )); then
     typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8da2b8'
-    bindkey '^E' autosuggest-accept
-    bindkey '^W' autosuggest-execute
-    bindkey '^U' autosuggest-toggle
+    bindkey -M viins '^E' autosuggest-accept
+    bindkey -M viins '^W' autosuggest-execute
+    bindkey -M viins '^U' autosuggest-toggle
   fi
 
   # Navigation and common tools.

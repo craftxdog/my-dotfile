@@ -102,3 +102,24 @@ git push origin main
 ## Seguridad
 
 Los archivos de autenticación, historiales y estados locales están excluidos por `.gitignore`. La rama `backup/pre-publication-history` contiene el historial anterior con esos archivos y debe permanecer local; no se debe publicar con `git push --all`.
+
+## Edición con lógica de Vim en Zsh
+
+Zsh no tiene un modo visual idéntico al de Vim para seleccionar texto de la salida; su modo equivalente para editar la línea es `vicmd` (modo normal). El indicador del prompt muestra `I` en inserción y `N` en modo normal.
+
+```text
+Esc o jj  → modo normal (N)
+i         → insertar antes del cursor (I)
+a         → insertar después del cursor (I)
+A         → insertar al final de la línea (I)
+0 / $     → inicio / final de la línea
+w / b     → siguiente / anterior palabra
+dd        → borrar la línea
+D         → borrar desde el cursor hasta el final
+u         → deshacer
+
+Ctrl-a [  → modo copia de tmux para visualizar la salida
+v         → comenzar selección dentro de tmux
+y         → copiar y salir del modo copia
+q         → salir sin copiar
+```

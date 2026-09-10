@@ -176,9 +176,9 @@ time_format = '%T'
 
 # Character (prompt symbol)
 [character]
-success_symbol = '[➜](bold green) '
-error_symbol = '[➜](bold red) '
-vimcmd_symbol = '[←](bold green) '
+success_symbol = '[I➜](bold green) '
+error_symbol = '[I✘](bold red) '
+vimcmd_symbol = '[N](bold yellow) '
 
 # Status
 [status]

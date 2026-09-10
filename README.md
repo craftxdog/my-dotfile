@@ -16,7 +16,7 @@ La configuración compartida debe cargarse después de los plugins de Zsh y de S
 
 - Ghostty deja margen visual y conserva hasta un millón de líneas de scrollback.
 - tmux acepta scroll con la rueda del mouse. También puedes usar `Ctrl-a [` para entrar al modo de copia, `PageUp`/`PageDown` para desplazarte, `g`/`G` para ir al inicio/final y `q` para salir.
-- Zsh usa edición estilo Emacs para que la línea siempre pueda modificarse sin quedar atrapada en modo vi.
+- Zsh usa la lógica de Vim: `Esc` o `jj` entra en modo normal (`N`), mientras `i`, `a` o `A` regresan a insertar (`I`).
 - Las sugerencias de Zsh se aceptan con `Ctrl-e`; `Ctrl-w` acepta y ejecuta la sugerencia completa.
 
 El flujo de trabajo y los comandos de publicación están documentados en [docs/TRUNK_BASED.md](docs/TRUNK_BASED.md).
