@@ -1,2 +1,4 @@
-set -gx ROUTELLM_API_KEY s2_25952da6e65d461ab24f7a189fc72cff
+# Keep the API key in fish/config-local.fish, which is ignored by Git.
+# Example (do not commit the real value):
+#   set -gx ROUTELLM_API_KEY YOUR_LOCAL_ROUTELLM_KEY
 set -gx ROUTELLM_MODEL gemini-3-pro-preview
