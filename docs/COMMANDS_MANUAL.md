@@ -1215,3 +1215,25 @@ git log --oneline --decorate -10
 8. Guarda secretos sólo en archivos locales ignorados y rótalos si fueron expuestos.
 9. Si un alias deja de funcionar, comprueba la shell activa, recarga la configuración y
    verifica que el binario exista con command -v.
+
+## 21. Helpers adicionales de trunk-based
+
+| Alias | Se expande a | Uso |
+|---|---|---|
+| gmain | git switch main | Volver al trunk local. |
+| gbase | git rebase origin/main | Actualizar una rama personal atrasada. |
+| gff | git merge --ff-only | Integrar sólo cuando el historial sea lineal. |
+| gconf | git diff --name-only --diff-filter=U | Listar archivos en conflicto. |
+| gwl | git worktree list | Ver worktrees activos. |
+| gwa | git worktree add | Crear un worktree adicional. |
+| gpr | gh pr create --fill --base main --web | Crear un PR de GitHub. |
+| gprv | gh pr view --web | Abrir el PR actual. |
+| gpru | gh pr update-branch --rebase | Actualizar el branch del PR con rebase. |
+| gchecks | gh pr checks --watch | Esperar los checks del PR. |
+| azpr | az repos pr | Usar los comandos de PR de Azure DevOps. |
+| lg | lazygit | Abrir LazyGit. |
+
+Cuando una rama personal ya publicada se actualiza con gbase, publica con
+git push --force-with-lease. Para una rama compartida usa git merge --no-edit origin/main
+y git push normal. Consulta docs/TRUNK_BASED.md para los casos de conflicto, pipelines,
+revisiones y políticas de main.

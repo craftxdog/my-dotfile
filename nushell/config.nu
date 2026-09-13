@@ -141,6 +141,19 @@ alias gcoall = git checkout -- .
 alias gr = git remote
 alias gre = git reset
 
+alias gmain = git switch main
+alias gbase = git rebase origin/main
+alias gff = git merge --ff-only
+alias gconf = git diff --name-only --diff-filter=U
+alias gwl = git worktree list
+alias gwa = git worktree add
+alias gpr = gh pr create --fill --base main --web
+alias gprv = gh pr view --web
+alias gpru = gh pr update-branch --rebase
+alias gchecks = gh pr checks --watch
+alias azpr = az repos pr
+alias lg = lazygit
+
 
 # ============================================================
 # Kubernetes
